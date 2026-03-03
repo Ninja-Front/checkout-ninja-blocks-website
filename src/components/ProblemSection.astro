@@ -24,21 +24,21 @@ const problems = [
 <section class="py-16 lg:py-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12 lg:mb-16">
-      <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-4">
+      <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
         Why Stores Lose Sales at Checkout
       </h2>
-      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto">
         Your products are great. Your marketing works. But a poor checkout experience is silently killing your conversions.
       </p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6">
       {problems.map((problem) => (
-        <div class="bg-navy-900 border border-navy-700 rounded-2xl p-8 text-center hover:border-navy-600 transition-colors">
-          <div class="inline-flex items-center justify-center w-14 h-14 bg-red-500/10 rounded-xl text-red-400 mb-5" set:html={problem.icon} />
-          <div class="font-heading font-bold text-4xl text-white mb-2">{problem.stat}</div>
-          <div class="text-mint-400 font-semibold text-sm uppercase tracking-wide mb-3">{problem.label}</div>
-          <p class="text-slate-400 text-sm leading-relaxed">{problem.description}</p>
+        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 text-center hover:border-gray-300 transition-colors">
+          <div class="inline-flex items-center justify-center w-14 h-14 bg-red-50 rounded-xl text-red-500 mb-5" set:html={problem.icon} />
+          <div class="font-heading font-bold text-4xl text-gray-900 mb-2">{problem.stat}</div>
+          <div class="text-mint-600 font-semibold text-sm uppercase tracking-wide mb-3">{problem.label}</div>
+          <p class="text-gray-500 text-sm leading-relaxed">{problem.description}</p>
         </div>
       ))}
     </div>

@@ -36,20 +36,20 @@ const features = [
 <section id="features" class="py-16 lg:py-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12 lg:mb-16">
-      <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-4">
+      <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
         Everything You Need to Convert
       </h2>
-      <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto">
         A complete checkout optimization toolkit built for Shopify merchants who want more revenue, not more complexity.
       </p>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {features.map((feature) => (
-        <div class="bg-navy-900 border border-navy-700 rounded-2xl p-8 hover:border-mint-500/30 transition-colors group">
-          <div class="inline-flex items-center justify-center w-12 h-12 bg-mint-500/10 rounded-xl text-mint-400 mb-5 group-hover:bg-mint-500/20 transition-colors" set:html={feature.icon} />
-          <h3 class="font-heading font-semibold text-lg text-white mb-2">{feature.title}</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">{feature.description}</p>
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:border-mint-500/40 transition-colors group shadow-sm">
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-mint-500/10 rounded-xl text-mint-500 mb-5 group-hover:bg-mint-500/20 transition-colors" set:html={feature.icon} />
+          <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">{feature.title}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">{feature.description}</p>
         </div>
       ))}
     </div>
