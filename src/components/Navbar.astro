@@ -1,0 +1,73 @@
+---
+
+---
+
+<nav class="fixed top-0 w-full z-50 bg-navy-950/80 backdrop-blur-md border-b border-navy-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <svg class="w-8 h-8 text-mint-400" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 2L20 12H28L22 18L24 28L16 22L8 28L10 18L4 12H12L16 2Z" fill="currentColor" opacity="0.9"/>
+        </svg>
+        <span class="font-heading font-bold text-xl text-white">Checkout<span class="text-mint-400">Ninja</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#features" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Features</a>
+        <a href="#pricing" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">Pricing</a>
+        <a href="#faq" class="text-slate-300 hover:text-white transition-colors text-sm font-medium">FAQ</a>
+      </div>
+
+      <!-- CTA -->
+      <div class="hidden md:block">
+        <a href="#cta" class="inline-flex items-center px-5 py-2.5 bg-mint-500 hover:bg-mint-400 text-navy-950 font-semibold text-sm rounded-full transition-colors">
+          Install on Shopify
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path id="menu-open" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          <path id="menu-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col gap-3 pt-2">
+        <a href="#features" class="text-slate-300 hover:text-white transition-colors text-sm font-medium py-2">Features</a>
+        <a href="#pricing" class="text-slate-300 hover:text-white transition-colors text-sm font-medium py-2">Pricing</a>
+        <a href="#faq" class="text-slate-300 hover:text-white transition-colors text-sm font-medium py-2">FAQ</a>
+        <a href="#cta" class="inline-flex items-center justify-center px-5 py-2.5 bg-mint-500 hover:bg-mint-400 text-navy-950 font-semibold text-sm rounded-full transition-colors mt-2">
+          Install on Shopify
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-open');
+  const iconClose = document.getElementById('menu-close');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+  });
+
+  // Close menu when clicking a link
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    });
+  });
+</script>
