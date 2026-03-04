@@ -1,0 +1,345 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const entry = await getEntry('features', 'conditional-visibility');
+const { title, description, badge, seo } = entry!.data;
+
+const conditionCategories = [
+  {
+    title: "Cart Conditions",
+    icon: `<svg class="w-6 h-6 text-mint-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" /></svg>`,
+    conditions: [
+      "Cart total (above/below threshold)",
+      "Cart item count",
+      "Specific product in cart",
+      "Specific collection in cart",
+      "Cart weight",
+      "Discount code applied",
+    ],
+  },
+  {
+    title: "Customer Conditions",
+    icon: `<svg class="w-6 h-6 text-mint-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>`,
+    conditions: [
+      "New vs returning customer",
+      "Customer tag",
+      "Customer email domain",
+      "Customer order count",
+      "B2B vs D2C customer",
+    ],
+  },
+  {
+    title: "Shipping & Location",
+    icon: `<svg class="w-6 h-6 text-mint-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
+    conditions: [
+      "Shipping country",
+      "Shipping state/province",
+      "Shipping method selected",
+      "Delivery zone",
+    ],
+  },
+  {
+    title: "Product Conditions",
+    icon: `<svg class="w-6 h-6 text-mint-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>`,
+    conditions: [
+      "Product type",
+      "Product vendor",
+      "Product tag",
+      "SKU match",
+      "Variant-level conditions",
+    ],
+  },
+  {
+    title: "Time & Date",
+    icon: `<svg class="w-6 h-6 text-mint-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+    conditions: [
+      "Day of week",
+      "Time of day",
+      "Date range (for promotions)",
+    ],
+  },
+  {
+    title: "Other",
+    icon: `<svg class="w-6 h-6 text-mint-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>`,
+    conditions: [
+      "Language/locale",
+      "Currency",
+      "Market (Shopify Markets)",
+      "Device type (mobile/desktop)",
+      "Custom metafield values",
+    ],
+  },
+];
+---
+
+<BaseLayout title={seo.title} description={seo.description}>
+  <Navbar />
+  <main>
+    <!-- Hero -->
+    <section class="relative pt-28 pb-16 overflow-hidden">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-mint-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <a href="/features" class="inline-flex items-center gap-1 text-gray-500 hover:text-gray-700 text-sm mb-8 transition-colors">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Features
+        </a>
+
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <!-- Left: Text -->
+          <div>
+            <div class="inline-flex items-center px-3 py-1 bg-mint-500/10 border border-mint-500/20 rounded-full mb-6">
+              <span class="text-mint-600 text-xs font-semibold">{badge}</span>
+            </div>
+
+            <h1 class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-gray-900 mb-6 leading-tight">
+              {title}
+            </h1>
+
+            <p class="text-gray-500 text-lg sm:text-xl leading-relaxed mb-8">
+              Your checkout adapts automatically. Show or hide any block based on what's in the cart, who's buying, or where they're shipping. With 31 built-in condition types, every customer sees a checkout built just for them.
+            </p>
+
+            <a href="#" class="inline-flex items-center justify-center px-8 py-3.5 bg-mint-500 hover:bg-mint-600 text-white font-semibold rounded-full transition-colors text-base">
+              Install on Shopify
+              <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Right: Comparison Mockup -->
+          <div class="space-y-4">
+            <!-- Customer A -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-8 h-8 bg-mint-500/10 rounded-full flex items-center justify-center">
+                  <span class="text-mint-600 text-xs font-bold">A</span>
+                </div>
+                <div>
+                  <div class="text-sm font-medium text-gray-900">Local Customer</div>
+                  <div class="text-[10px] text-gray-400">Small cart · Domestic shipping</div>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div class="bg-gray-50 rounded-lg p-2.5 flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-mint-500"></div>
+                  <div class="h-1.5 bg-gray-200 rounded w-2/3"></div>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-2.5 flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-mint-500"></div>
+                  <div class="h-1.5 bg-gray-200 rounded w-1/2"></div>
+                </div>
+                <div class="bg-mint-500/5 border border-mint-500/20 rounded-lg p-2.5">
+                  <div class="text-[10px] text-mint-600 font-medium">Free Shipping Badge</div>
+                </div>
+                <div class="h-7 bg-mint-500/20 rounded-lg"></div>
+              </div>
+              <div class="mt-3 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-[10px] text-gray-400">Simple checkout — 3 blocks shown</span>
+              </div>
+            </div>
+
+            <!-- Customer B -->
+            <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-8 h-8 bg-amber-500/10 rounded-full flex items-center justify-center">
+                  <span class="text-amber-600 text-xs font-bold">B</span>
+                </div>
+                <div>
+                  <div class="text-sm font-medium text-gray-900">International Customer</div>
+                  <div class="text-[10px] text-gray-400">Large cart · International shipping</div>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div class="bg-gray-50 rounded-lg p-2.5 flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-mint-500"></div>
+                  <div class="h-1.5 bg-gray-200 rounded w-2/3"></div>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-2.5 flex items-center gap-2">
+                  <div class="w-1.5 h-1.5 rounded-full bg-mint-500"></div>
+                  <div class="h-1.5 bg-gray-200 rounded w-1/2"></div>
+                </div>
+                <div class="bg-amber-500/5 border border-amber-500/20 rounded-lg p-2.5">
+                  <div class="text-[10px] text-amber-600 font-medium">Customs Info Required</div>
+                </div>
+                <div class="bg-amber-500/5 border border-amber-500/20 rounded-lg p-2.5">
+                  <div class="text-[10px] text-amber-600 font-medium">Quantity Limit Notice</div>
+                </div>
+                <div class="bg-mint-500/5 border border-mint-500/20 rounded-lg p-2.5">
+                  <div class="text-[10px] text-mint-600 font-medium">Shipping Protection Offer</div>
+                </div>
+                <div class="h-7 bg-mint-500/20 rounded-lg"></div>
+              </div>
+              <div class="mt-3 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-[10px] text-gray-400">Adapted checkout — 5 blocks shown</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 lg:mb-16">
+          <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
+            How It Works
+          </h2>
+          <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+            Three simple steps to personalize every checkout experience
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-mint-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <span class="font-heading font-bold text-mint-600 text-lg">1</span>
+            </div>
+            <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">Add a Block</h3>
+            <p class="text-gray-500 text-sm">Drag any of the 24 checkout blocks into your checkout layout</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-mint-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <span class="font-heading font-bold text-mint-600 text-lg">2</span>
+            </div>
+            <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">Set Conditions</h3>
+            <p class="text-gray-500 text-sm">Choose from 31 condition types to control when the block appears</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-mint-500/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <span class="font-heading font-bold text-mint-600 text-lg">3</span>
+            </div>
+            <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">Go Live</h3>
+            <p class="text-gray-500 text-sm">Your checkout adapts in real-time — the right content for every customer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Condition Categories Grid -->
+    <section class="py-16 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 lg:mb-16">
+          <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
+            31 Condition Types
+          </h2>
+          <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+            Target any aspect of the checkout experience
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {conditionCategories.map((cat) => (
+            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+              <div class="flex items-center gap-3 mb-5">
+                <div class="w-10 h-10 bg-mint-500/10 rounded-xl flex items-center justify-center">
+                  <Fragment set:html={cat.icon} />
+                </div>
+                <h3 class="font-heading font-semibold text-gray-900">{cat.title}</h3>
+              </div>
+              <ul class="space-y-2.5">
+                {cat.conditions.map((condition) => (
+                  <li class="flex items-center gap-2 text-sm text-gray-500">
+                    <svg class="w-4 h-4 text-mint-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {condition}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 lg:mb-16">
+          <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
+            Real-World Examples
+          </h2>
+          <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+            See how merchants use conditional visibility to boost conversions
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+            <div class="text-2xl mb-4">🎁</div>
+            <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">Gift Message for Gift Items</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Show a gift message field only when the cart contains items from your "Gifts" collection. No clutter for regular orders.</p>
+            <div class="bg-gray-50 rounded-xl p-4 text-xs text-gray-500">
+              <span class="text-mint-600 font-semibold">IF</span> collection = "Gifts" <span class="text-mint-600 font-semibold">THEN</span> show Gift Message block
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+            <div class="text-2xl mb-4">🌍</div>
+            <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">Customs Notice for International Orders</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Display customs information and duty estimates only for international shipments. Domestic customers see a clean checkout.</p>
+            <div class="bg-gray-50 rounded-xl p-4 text-xs text-gray-500">
+              <span class="text-mint-600 font-semibold">IF</span> country ≠ home country <span class="text-mint-600 font-semibold">THEN</span> show Customs Info block
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+            <div class="text-2xl mb-4">💰</div>
+            <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">Free Shipping Progress Bar</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Show a progress bar when the cart is close to the free shipping threshold. Hide it once they qualify.</p>
+            <div class="bg-gray-50 rounded-xl p-4 text-xs text-gray-500">
+              <span class="text-mint-600 font-semibold">IF</span> cart total &lt; $75 <span class="text-mint-600 font-semibold">THEN</span> show Free Shipping Progress block
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+            <div class="text-2xl mb-4">⭐</div>
+            <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">VIP Upsell for Returning Customers</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Show exclusive product upsells only to returning customers with 3+ orders. First-time buyers see the standard checkout.</p>
+            <div class="bg-gray-50 rounded-xl p-4 text-xs text-gray-500">
+              <span class="text-mint-600 font-semibold">IF</span> order count ≥ 3 <span class="text-mint-600 font-semibold">THEN</span> show VIP Upsell block
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="py-20 lg:py-28 bg-gray-900">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
+          Personalize Every Checkout
+        </h2>
+        <p class="text-gray-300 text-lg sm:text-xl mb-10 max-w-2xl mx-auto">
+          Install Checkout Ninja and start using conditional visibility in minutes
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#" class="inline-flex items-center justify-center px-10 py-4 bg-mint-500 hover:bg-mint-600 text-white font-bold rounded-full transition-colors text-base">
+            Install on Shopify
+            <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a href="/features" class="inline-flex items-center justify-center px-10 py-4 border border-white/30 hover:border-white/60 text-white font-medium rounded-full transition-colors text-base">
+            Explore All Features
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
