@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import FeaturesHero from '../../components/features/FeaturesHero.astro';
+import BlocksSection from '../../components/features/BlocksSection.astro';
+import TemplatesSection from '../../components/features/TemplatesSection.astro';
+import ConditionalVisibilitySection from '../../components/features/ConditionalVisibilitySection.astro';
+import RulesSection from '../../components/features/RulesSection.astro';
+import AdditionalCapabilitiesSection from '../../components/features/AdditionalCapabilitiesSection.astro';
+import SocialProofStrip from '../../components/features/SocialProofStrip.astro';
+import FeaturesCta from '../../components/features/FeaturesCta.astro';
+---
+
+<BaseLayout
+  title="Features — Checkout Ninja | 24 Checkout Blocks for Shopify Plus"
+  description="Customize your Shopify Plus checkout with 24 drag-and-drop blocks, smart rules, conditional visibility, and pre-built templates. No code needed."
+>
+  <Navbar />
+  <main>
+    <FeaturesHero />
+    <BlocksSection />
+    <TemplatesSection />
+    <ConditionalVisibilitySection />
+    <RulesSection />
+    <AdditionalCapabilitiesSection />
+    <SocialProofStrip />
+    <FeaturesCta />
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+
+const entries = (await getCollection('features')).filter(e => e.data.type === 'capability');
+---
+
+<section class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8">
+      {entries.map((entry) => (
+        <a href={`/features/${entry.id}`} class="group block">
+          <!-- Image Placeholder -->
+          <div class="bg-gray-100 rounded-2xl aspect-video flex items-center justify-center mb-5 group-hover:bg-gray-200 transition-colors">
+            <Fragment set:html={entry.data.icon} />
+          </div>
+
+          <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2 group-hover:text-mint-600 transition-colors">
+            {entry.data.title}
+          </h3>
+          <p class="text-gray-500 text-sm">
+            {entry.data.description}
+          </p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
