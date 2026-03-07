@@ -1,0 +1,47 @@
+---
+const posts = [
+  {
+    title: "5 Ways to Reduce Checkout Abandonment on Shopify Plus",
+    excerpt: "Small changes at checkout can make a big difference in how many customers complete their purchase.",
+  },
+  {
+    title: "How Trust Badges Influence Buying Decisions at Checkout",
+    excerpt: "Customers look for trust signals before entering payment details — here's how to give them what they need.",
+  },
+  {
+    title: "Setting Up Checkout Upsells That Actually Convert",
+    excerpt: "Not all upsells are created equal. Learn what works and what pushes customers away.",
+  },
+];
+---
+
+<section class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 text-center mb-12">
+      Checkout tips and strategies
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      {posts.map((post) => (
+        <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+          <div class="aspect-video bg-gray-50 flex items-center justify-center">
+            <svg class="w-10 h-10 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5" />
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading font-semibold text-gray-900 mb-2">{post.title}</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">{post.excerpt}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- TODO: Replace static cards with dynamic blog content collection -->
+    <div class="text-center">
+      <a href="/blog" class="text-mint-600 font-medium text-sm hover:text-mint-700 transition-colors">
+        Read more on the blog &rarr;
+      </a>
+    </div>
+  </div>
+</section>

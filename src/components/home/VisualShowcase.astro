@@ -1,0 +1,59 @@
+---
+const cards = [
+  {
+    caption: "Upsell products right at checkout",
+    link: "/features/conversion-boosters",
+  },
+  {
+    caption: "Trust badges and payment icons",
+    link: "/features/trust-security",
+  },
+  {
+    caption: "Custom fields, date pickers, and dropdowns",
+    link: "/features/custom-fields",
+  },
+  {
+    caption: "Branded banners, content, and layout",
+    link: "/features/layout-content",
+  },
+  {
+    caption: "Coupon display and shipping protection",
+    link: "/features/conversion-boosters",
+  },
+];
+---
+
+<section class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 text-center mb-12">
+      Here's what stores are doing with their checkouts
+    </h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {cards.map((card, i) => (
+        <a
+          href={card.link}
+          class:list={[
+            "group block bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow",
+            i >= 3 && "sm:col-span-1 lg:col-span-1",
+          ]}
+        >
+          <div class="aspect-video bg-gray-50 flex items-center justify-center">
+            <div class="text-center px-6">
+              <svg class="w-10 h-10 text-gray-200 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+              </svg>
+              <span class="text-xs text-gray-300">Screenshot placeholder</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <p class="text-gray-700 font-medium text-sm group-hover:text-mint-600 transition-colors">
+              {card.caption}
+              <span class="inline-block ml-1 group-hover:translate-x-0.5 transition-transform">&rarr;</span>
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

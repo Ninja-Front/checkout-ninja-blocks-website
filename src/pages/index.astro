@@ -1,28 +1,31 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import ProblemSection from '../components/ProblemSection.astro';
-import FeaturesSection from '../components/FeaturesSection.astro';
-import SocialProof from '../components/SocialProof.astro';
-import HowItWorks from '../components/HowItWorks.astro';
-import PricingSection from '../components/PricingSection.astro';
-import FaqSection from '../components/FaqSection.astro';
-import CtaSection from '../components/CtaSection.astro';
+import HomeHero from '../components/home/HomeHero.astro';
+import LogoBar from '../components/home/LogoBar.astro';
+import VisualShowcase from '../components/home/VisualShowcase.astro';
+import CaseStudies from '../components/home/CaseStudies.astro';
+import BlogPreview from '../components/home/BlogPreview.astro';
+import TemplatesPreview from '../components/home/TemplatesPreview.astro';
+import Testimonials from '../components/home/Testimonials.astro';
+import HomeCta from '../components/home/HomeCta.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Checkout Ninja — Shopify Checkout Optimization">
+<BaseLayout
+  title="Checkout Ninja — Build a Better Shopify Plus Checkout"
+  description="Add upsells, trust badges, custom fields, reviews, and checkout rules to your Shopify Plus checkout. 24 block types, templates, and conditional visibility. No code needed."
+>
   <Navbar />
   <main>
-    <Hero />
-    <ProblemSection />
-    <FeaturesSection />
-    <SocialProof />
-    <HowItWorks />
-    <PricingSection />
-    <FaqSection />
-    <CtaSection />
+    <HomeHero />
+    <LogoBar />
+    <VisualShowcase />
+    <CaseStudies />
+    <BlogPreview />
+    <TemplatesPreview />
+    <Testimonials />
+    <HomeCta />
   </main>
   <Footer />
 </BaseLayout>

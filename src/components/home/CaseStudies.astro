@@ -1,0 +1,54 @@
+---
+const studies = [
+  {
+    store: "Headphone Zone",
+    action: "Added trust badges, customer reviews, and gift message fields to their checkout",
+    result: "Customers feel more confident completing purchases with visible trust signals at checkout.",
+  },
+  {
+    store: "Lumebox",
+    action: "Set up checkout validation rules to prevent incomplete orders",
+    result: "Reduced support tickets from incomplete orders and improved fulfillment accuracy.",
+  },
+  {
+    store: "Store Example",
+    action: "Implemented checkout upsells and branded banners to increase average order value",
+    result: "Saw measurable improvement in AOV with targeted product recommendations at checkout.",
+  },
+];
+---
+
+<section class="py-16 lg:py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 text-center mb-12">
+      Results from real stores
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      {studies.map((study) => (
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 bg-mint-500/10 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-mint-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016A3.001 3.001 0 0021 9.349m-18 0a2.99 2.99 0 00.621-1.853L4.16 5.25h15.68l.539 2.246A3 3 0 0021 9.35" />
+              </svg>
+            </div>
+            <span class="font-heading font-semibold text-gray-900">{study.store}</span>
+          </div>
+          <p class="text-gray-500 text-sm mb-4">
+            <span class="font-medium text-gray-700">What they did:</span> {study.action}
+          </p>
+          <p class="text-gray-500 text-sm italic">
+            "{study.result}"
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center">
+      <a href="/case-studies" class="text-mint-600 font-medium text-sm hover:text-mint-700 transition-colors">
+        Read more case studies &rarr;
+      </a>
+    </div>
+  </div>
+</section>
