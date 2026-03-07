@@ -2,33 +2,43 @@
 const features = [
   {
     caption: "Upsell products right at checkout",
-    description: "Show product recommendations, bundles, and add-ons directly in the checkout flow to increase average order value.",
+    description: "Show product recommendations, bundles, and add-ons directly in the checkout flow.",
     link: "/features/conversion-boosters",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />`,
+    span: "lg:col-span-3 lg:row-span-2",
+    height: "min-h-[320px]",
   },
   {
     caption: "Trust badges and payment icons",
-    description: "Display security seals, payment method icons, and money-back guarantees to build confidence.",
+    description: "Display security seals, payment icons, and guarantees.",
     link: "/features/trust-security",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />`,
+    span: "lg:col-span-2",
+    height: "min-h-[150px]",
   },
   {
-    caption: "Custom fields, date pickers, and dropdowns",
-    description: "Collect gift messages, delivery dates, special instructions, and any custom data you need.",
+    caption: "Custom fields and date pickers",
+    description: "Collect gift messages, delivery dates, and special instructions.",
     link: "/features/custom-fields",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />`,
+    span: "lg:col-span-2",
+    height: "min-h-[150px]",
   },
   {
     caption: "Branded banners, content, and layout",
-    description: "Add custom headings, banners, dividers, and rich content blocks to match your brand.",
+    description: "Custom headings, banners, dividers, and rich content blocks.",
     link: "/features/layout-content",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />`,
+    span: "lg:col-span-3",
+    height: "min-h-[150px]",
   },
   {
     caption: "Coupon display and shipping protection",
-    description: "Show applied discounts, coupon codes, and offer shipping protection at the point of purchase.",
+    description: "Applied discounts, coupon codes, and shipping protection.",
     link: "/features/conversion-boosters",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z" />`,
+    span: "lg:col-span-2",
+    height: "min-h-[150px]",
   },
 ];
 ---
@@ -42,29 +52,37 @@ const features = [
       Real checkout customizations powered by 24+ block types
     </p>
 
-    <div class="space-y-6">
-      {features.map((feature, i) => (
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      {features.map((feature) => (
         <a
           href={feature.link}
-          class="group flex flex-col md:flex-row items-start gap-6 p-6 lg:p-8 rounded-2xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200"
+          class:list={[
+            "group relative rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 p-6 flex flex-col justify-end hover:border-mint-500/30 hover:shadow-lg transition-all",
+            feature.span,
+            feature.height,
+          ]}
         >
-          <div class="w-12 h-12 bg-mint-500/10 rounded-xl flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6 text-mint-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" set:html={feature.icon} />
+          <!-- Background screenshot placeholder -->
+          <div class="absolute inset-0 flex items-center justify-center opacity-[0.07]">
+            <svg class="w-24 h-24 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="0.5" set:html={feature.icon} />
           </div>
-          <div class="flex-1">
-            <h3 class="font-heading font-semibold text-gray-900 text-lg mb-1 group-hover:text-mint-600 transition-colors">
+
+          <!-- Content -->
+          <div class="relative z-10">
+            <div class="w-10 h-10 bg-white border border-gray-200 rounded-xl flex items-center justify-center mb-3 shadow-sm">
+              <svg class="w-5 h-5 text-mint-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" set:html={feature.icon} />
+            </div>
+            <h3 class="font-heading font-semibold text-gray-900 mb-1 group-hover:text-mint-600 transition-colors">
               {feature.caption}
-              <span class="inline-block ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">&rarr;</span>
             </h3>
             <p class="text-gray-500 text-sm leading-relaxed">{feature.description}</p>
           </div>
-          <div class="hidden lg:flex w-64 h-36 bg-gray-50 border border-gray-100 rounded-xl items-center justify-center shrink-0">
-            <div class="text-center">
-              <svg class="w-8 h-8 text-gray-200 mx-auto mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-              </svg>
-              <span class="text-[10px] text-gray-300">Screenshot</span>
-            </div>
+
+          <!-- Hover arrow -->
+          <div class="absolute top-5 right-5 w-8 h-8 bg-white border border-gray-200 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-sm">
+            <svg class="w-4 h-4 text-mint-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+            </svg>
           </div>
         </a>
       ))}
