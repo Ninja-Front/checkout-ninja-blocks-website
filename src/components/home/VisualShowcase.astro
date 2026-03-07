@@ -1,208 +1,171 @@
 ---
-const categories = ["All", "Upsells", "Trust & Security", "Custom Fields", "Layout", "Conversion"];
-
-const screens = [
-  {
-    caption: "Upsell products right at checkout",
-    link: "/features/conversion-boosters",
-    category: "Upsells",
-    mockup: {
-      title: "Smart Upsell",
-      elements: [
-        { type: "product", label: "Premium Widget", price: "$49.99" },
-        { type: "upsell", label: "Add Premium Case — Save 20%" },
-      ],
-    },
-  },
-  {
-    caption: "Trust badges and payment icons",
-    link: "/features/trust-security",
-    category: "Trust & Security",
-    mockup: {
-      title: "Trust Signals",
-      elements: [
-        { type: "badges", labels: ["Secure", "SSL", "Money-Back"] },
-        { type: "icons", label: "Visa  MC  Amex  PayPal" },
-      ],
-    },
-  },
-  {
-    caption: "Custom fields, date pickers, and dropdowns",
-    link: "/features/custom-fields",
-    category: "Custom Fields",
-    mockup: {
-      title: "Custom Fields",
-      elements: [
-        { type: "field", label: "Gift Message" },
-        { type: "field", label: "Delivery Date" },
-        { type: "field", label: "Special Instructions" },
-      ],
-    },
-  },
-  {
-    caption: "Branded banners, content, and layout",
-    link: "/features/layout-content",
-    category: "Layout",
-    mockup: {
-      title: "Branded Content",
-      elements: [
-        { type: "banner", label: "Free shipping on orders over $50" },
-        { type: "divider" },
-        { type: "text", label: "Holiday returns extended to Jan 31" },
-      ],
-    },
-  },
-  {
-    caption: "Coupon display and shipping protection",
-    link: "/features/conversion-boosters",
-    category: "Conversion",
-    mockup: {
-      title: "Conversion Boosters",
-      elements: [
-        { type: "coupon", label: "SAVE15 applied — 15% off" },
-        { type: "protection", label: "Add shipping protection — $2.99" },
-      ],
-    },
-  },
+const tabs = [
+  { id: "conversions", label: "Boost Conversions" },
+  { id: "trust", label: "Build Trust" },
+  { id: "customize", label: "Customize Checkout" },
 ];
+
+const sections = {
+  conversions: {
+    features: [
+      {
+        title: "Upsell products at checkout",
+        description: "Show product recommendations and bundle offers right when customers are ready to buy. Merchants see higher AOV without extra effort.",
+        link: "/features/conversion-boosters",
+        size: "large",
+      },
+      {
+        title: "Coupon display",
+        description: "Show applied discounts and promo codes so customers feel the value of their purchase.",
+        link: "/features/conversion-boosters",
+        size: "small",
+      },
+      {
+        title: "Shipping protection",
+        description: "Offer shipping protection at checkout — one click for peace of mind and extra revenue.",
+        link: "/features/conversion-boosters",
+        size: "small",
+      },
+    ],
+  },
+  trust: {
+    features: [
+      {
+        title: "Trust badges and security seals",
+        description: "Display SSL badges, payment icons, and money-back guarantees. Customers feel safe entering payment details when they see familiar trust signals.",
+        link: "/features/trust-security",
+        size: "small",
+      },
+      {
+        title: "Payment method icons",
+        description: "Show Visa, Mastercard, Amex, PayPal — let customers know their preferred payment is supported.",
+        link: "/features/trust-security",
+        size: "small",
+      },
+      {
+        title: "Customer reviews at checkout",
+        description: "Surface star ratings and recent reviews right at the point of purchase. Social proof when it matters most — proven to reduce cart abandonment.",
+        link: "/features/trust-security",
+        size: "large",
+      },
+    ],
+  },
+  customize: {
+    features: [
+      {
+        title: "Custom fields and forms",
+        description: "Add gift messages, delivery date pickers, dropdowns, and any custom data field. Collect exactly what you need from customers during checkout.",
+        link: "/features/custom-fields",
+        size: "large",
+      },
+      {
+        title: "Branded banners and content",
+        description: "Match your checkout to your brand with custom headings, banners, and dividers.",
+        link: "/features/layout-content",
+        size: "small",
+      },
+      {
+        title: "Conditional visibility rules",
+        description: "Show different blocks based on cart value, product type, or customer tags. Smart targeting, no code.",
+        link: "/features/conditional-visibility",
+        size: "small",
+      },
+    ],
+  },
+};
 ---
 
 <section class="py-16 lg:py-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 text-center mb-4">
-      Here's what stores are doing with their checkouts
+      Here's how merchants get value from Checkout Ninja
     </h2>
     <p class="text-gray-500 text-center text-lg mb-10 max-w-2xl mx-auto">
-      Real checkout customizations powered by 24+ block types
+      Real checkout customizations that drive results
     </p>
 
-    <!-- Category tabs -->
+    <!-- Tabs -->
     <div class="flex justify-center mb-12">
-      <div id="showcase-tabs" class="inline-flex gap-1 sm:gap-2 p-1 bg-gray-100 rounded-full flex-wrap justify-center">
-        {categories.map((cat, i) => (
+      <div id="value-tabs" class="inline-flex gap-1 p-1 bg-gray-100 rounded-full">
+        {tabs.map((tab, i) => (
           <button
-            data-tab={cat}
+            data-tab={tab.id}
             class:list={[
-              "showcase-tab px-3 sm:px-4 py-2 text-sm font-medium rounded-full transition-all cursor-pointer",
+              "value-tab px-5 py-2.5 text-sm font-medium rounded-full transition-all cursor-pointer",
               i === 0 ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-700",
             ]}
           >
-            {cat}
+            {tab.label}
           </button>
         ))}
       </div>
     </div>
 
-    <!-- Screenshot gallery -->
-    <div id="showcase-gallery" class="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory showcase-scroll">
-      {screens.map((screen) => (
-        <a
-          href={screen.link}
-          data-category={screen.category}
-          class="showcase-screen group snap-start shrink-0 w-[260px] sm:w-[280px] transition-all duration-300"
-        >
-          <!-- Phone/checkout mockup frame -->
-          <div class="bg-gray-900 rounded-2xl p-4 pb-6 mb-3 hover:ring-2 hover:ring-mint-500/30 transition-all">
-            <!-- Top bar -->
-            <div class="flex items-center justify-between mb-4">
-              <div class="flex gap-1.5">
-                <div class="w-2 h-2 rounded-full bg-white/20"></div>
-                <div class="w-2 h-2 rounded-full bg-white/20"></div>
-                <div class="w-2 h-2 rounded-full bg-white/20"></div>
-              </div>
-              <span class="text-[10px] text-white/40">{screen.mockup.title}</span>
-            </div>
-
-            <!-- Mockup content -->
-            <div class="space-y-3">
-              {screen.mockup.elements.map((el) => (
-                el.type === "product" ? (
-                  <div class="flex items-center gap-3 bg-white/10 rounded-lg p-3">
-                    <div class="w-10 h-10 bg-white/10 rounded-lg"></div>
-                    <div class="flex-1">
-                      <div class="text-white text-xs font-medium">{el.label}</div>
-                      <div class="text-mint-400 text-xs font-semibold">{el.price}</div>
-                    </div>
-                  </div>
-                ) : el.type === "upsell" ? (
-                  <div class="bg-mint-500/20 border border-mint-500/30 rounded-lg p-3">
-                    <div class="flex items-center gap-2 mb-1">
-                      <svg class="w-3 h-3 text-mint-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+    <!-- Panels -->
+    {Object.entries(sections).map(([id, section], idx) => (
+      <div
+        data-panel={id}
+        class:list={["value-panel", idx !== 0 && "hidden"]}
+      >
+        <div class="grid md:grid-cols-2 gap-5">
+          {section.features.map((feature, fi) => (
+            <a
+              href={feature.link}
+              class:list={[
+                "group block rounded-2xl overflow-hidden border border-gray-200 bg-white hover:border-mint-500/30 hover:shadow-lg transition-all",
+                feature.size === "large" && "md:col-span-2",
+              ]}
+            >
+              <div class:list={[
+                "flex flex-col",
+                feature.size === "large" ? "md:flex-row" : "",
+              ]}>
+                <!-- Image area -->
+                <div class:list={[
+                  "bg-gray-50 flex items-center justify-center relative overflow-hidden",
+                  feature.size === "large" ? "md:w-1/2 min-h-[240px]" : "min-h-[200px]",
+                ]}>
+                  <div class="text-center px-8">
+                    <div class="w-16 h-16 bg-gray-100 rounded-2xl mx-auto mb-3 flex items-center justify-center">
+                      <svg class="w-8 h-8 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
                       </svg>
-                      <span class="text-mint-400 text-[10px] font-semibold">Smart Upsell</span>
                     </div>
-                    <div class="text-white/70 text-xs">{el.label}</div>
+                    <span class="text-xs text-gray-300">Product screenshot</span>
                   </div>
-                ) : el.type === "badges" ? (
-                  <div class="flex gap-2">
-                    {el.labels.map((badge: string) => (
-                      <span class="text-[10px] text-white/70 bg-white/10 px-2 py-1.5 rounded-md">{badge}</span>
-                    ))}
-                  </div>
-                ) : el.type === "icons" ? (
-                  <div class="bg-white/5 rounded-lg p-3">
-                    <div class="text-white/40 text-[10px]">{el.label}</div>
-                  </div>
-                ) : el.type === "field" ? (
-                  <div class="bg-white/10 rounded-lg p-3">
-                    <div class="text-white/40 text-[10px] mb-1">{el.label}</div>
-                    <div class="h-1.5 bg-white/10 rounded w-3/4"></div>
-                  </div>
-                ) : el.type === "banner" ? (
-                  <div class="bg-mint-500/20 rounded-lg p-3">
-                    <div class="text-mint-400 text-xs font-medium">{el.label}</div>
-                  </div>
-                ) : el.type === "divider" ? (
-                  <div class="border-t border-white/10"></div>
-                ) : el.type === "text" ? (
-                  <div class="bg-white/5 rounded-lg p-3">
-                    <div class="text-white/60 text-xs">{el.label}</div>
-                  </div>
-                ) : el.type === "coupon" ? (
-                  <div class="bg-amber-500/20 border border-amber-500/30 rounded-lg p-3">
-                    <div class="text-amber-300 text-xs font-medium">{el.label}</div>
-                  </div>
-                ) : el.type === "protection" ? (
-                  <div class="flex items-center gap-2 bg-white/10 rounded-lg p-3">
-                    <svg class="w-4 h-4 text-mint-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                    </svg>
-                    <div class="text-white/70 text-xs">{el.label}</div>
-                  </div>
-                ) : null
-              ))}
-            </div>
-          </div>
+                </div>
 
-          <!-- Caption -->
-          <p class="text-gray-700 text-sm font-medium text-center group-hover:text-mint-600 transition-colors">
-            {screen.caption}
-          </p>
-        </a>
-      ))}
-    </div>
+                <!-- Text content -->
+                <div class:list={[
+                  "p-6 lg:p-8 flex flex-col justify-center",
+                  feature.size === "large" ? "md:w-1/2" : "",
+                ]}>
+                  <h3 class="font-heading font-semibold text-gray-900 text-lg mb-2 group-hover:text-mint-600 transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                    {feature.description}
+                  </p>
+                  <span class="text-mint-600 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Learn more
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
   </div>
 </section>
 
-<style>
-  .showcase-scroll::-webkit-scrollbar {
-    display: none;
-  }
-  .showcase-scroll {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .showcase-screen.hidden-screen {
-    display: none;
-  }
-</style>
-
 <script>
   document.addEventListener('astro:page-load', () => {
-    const tabs = document.querySelectorAll('.showcase-tab');
-    const screens = document.querySelectorAll('.showcase-screen');
-    const gallery = document.getElementById('showcase-gallery');
+    const tabs = document.querySelectorAll('.value-tab');
+    const panels = document.querySelectorAll('.value-panel');
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
@@ -216,20 +179,14 @@ const screens = [
         tab.classList.add('bg-white', 'text-gray-900', 'shadow-sm');
         tab.classList.remove('text-gray-500');
 
-        // Filter screens
-        screens.forEach(screen => {
-          const category = screen.getAttribute('data-category');
-          if (selected === 'All' || category === selected) {
-            screen.classList.remove('hidden-screen');
+        // Show/hide panels
+        panels.forEach(panel => {
+          if (panel.getAttribute('data-panel') === selected) {
+            panel.classList.remove('hidden');
           } else {
-            screen.classList.add('hidden-screen');
+            panel.classList.add('hidden');
           }
         });
-
-        // Scroll gallery back to start
-        if (gallery) {
-          gallery.scrollTo({ left: 0, behavior: 'smooth' });
-        }
       });
     });
   });
