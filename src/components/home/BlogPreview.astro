@@ -17,28 +17,53 @@ const posts = [
 
 <section class="py-16 lg:py-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 text-center mb-12">
-      Checkout tips and strategies
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-6 mb-10">
-      {posts.map((post) => (
-        <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-          <div class="aspect-video bg-gray-50 flex items-center justify-center">
-            <svg class="w-10 h-10 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5" />
-            </svg>
-          </div>
-          <div class="p-6">
-            <h3 class="font-heading font-semibold text-gray-900 mb-2">{post.title}</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">{post.excerpt}</p>
-          </div>
-        </div>
-      ))}
+    <div class="flex items-end justify-between mb-12">
+      <div>
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 mb-2">
+          Checkout tips and strategies
+        </h2>
+        <p class="text-gray-500">Insights to help you optimize your Shopify Plus checkout.</p>
+      </div>
+      <a href="/blog" class="hidden sm:inline-flex items-center gap-2 text-mint-600 font-medium text-sm hover:text-mint-700 transition-colors whitespace-nowrap">
+        View all posts
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
     </div>
 
-    <!-- TODO: Replace static cards with dynamic blog content collection -->
-    <div class="text-center">
+    <div class="grid lg:grid-cols-5 gap-8">
+      <!-- Featured post -->
+      <div class="lg:col-span-3">
+        <div class="aspect-[16/10] bg-gray-50 border border-gray-100 rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-12 h-12 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5" />
+          </svg>
+        </div>
+        <h3 class="font-heading font-semibold text-xl text-gray-900 mb-2">{posts[0].title}</h3>
+        <p class="text-gray-500 leading-relaxed">{posts[0].excerpt}</p>
+      </div>
+
+      <!-- Post list -->
+      <div class="lg:col-span-2 flex flex-col gap-6">
+        {posts.slice(1).map((post) => (
+          <div class="flex gap-4 items-start">
+            <div class="w-20 h-20 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-heading font-semibold text-gray-900 mb-1">{post.title}</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">{post.excerpt}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- TODO: Replace static content with dynamic blog content collection -->
+    <div class="text-center mt-10 sm:hidden">
       <a href="/blog" class="text-mint-600 font-medium text-sm hover:text-mint-700 transition-colors">
         Read more on the blog &rarr;
       </a>

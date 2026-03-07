@@ -1,43 +1,49 @@
 ---
 const templates = [
-  { name: "Trust-Focused", description: "Trust badges, reviews, and secure checkout signals" },
-  { name: "Upsell-Focused", description: "Product recommendations and bundle offers at checkout" },
-  { name: "Custom Fields", description: "Gift messages, date pickers, and special instructions" },
-  { name: "Full Suite", description: "A complete checkout with all block types configured" },
+  { name: "Trust-Focused", description: "Trust badges, reviews, and secure checkout signals", color: "bg-emerald-50 border-emerald-100" },
+  { name: "Upsell-Focused", description: "Product recommendations and bundle offers at checkout", color: "bg-amber-50 border-amber-100" },
+  { name: "Custom Fields", description: "Gift messages, date pickers, and special instructions", color: "bg-sky-50 border-sky-100" },
+  { name: "Full Suite", description: "A complete checkout with all block types configured", color: "bg-violet-50 border-violet-100" },
 ];
 ---
 
 <section class="py-16 lg:py-24 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
-        Don't want to start from scratch?
-      </h2>
-      <p class="text-gray-500 text-lg max-w-xl mx-auto">
-        Pick a pre-built template and customize it to match your store.
-      </p>
-    </div>
+    <div class="lg:grid lg:grid-cols-5 lg:gap-16 items-center">
+      <!-- Left: Copy -->
+      <div class="lg:col-span-2 mb-10 lg:mb-0">
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
+          Don't want to start from scratch?
+        </h2>
+        <p class="text-gray-500 text-lg mb-6">
+          Pick a pre-built template and customize it to match your store. Each template comes with pre-configured blocks ready to go.
+        </p>
+        <a href="/templates" class="inline-flex items-center gap-2 text-mint-600 font-medium hover:text-mint-700 transition-colors">
+          Browse all templates
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-      {templates.map((tpl) => (
-        <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-          <div class="aspect-[4/3] bg-gray-50 flex items-center justify-center">
-            <svg class="w-10 h-10 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
-            </svg>
+      <!-- Right: Template Grid -->
+      <div class="lg:col-span-3 grid grid-cols-2 gap-4">
+        {templates.map((tpl) => (
+          <div class:list={["rounded-2xl border p-6 flex flex-col justify-between aspect-square", tpl.color]}>
+            <div>
+              <h3 class="font-heading font-semibold text-gray-900 mb-2">{tpl.name}</h3>
+              <p class="text-gray-500 text-sm">{tpl.description}</p>
+            </div>
+            <div class="mt-4">
+              <div class="flex gap-1">
+                <div class="h-1.5 w-8 bg-gray-300/50 rounded-full"></div>
+                <div class="h-1.5 w-12 bg-gray-300/50 rounded-full"></div>
+                <div class="h-1.5 w-6 bg-gray-300/50 rounded-full"></div>
+              </div>
+            </div>
           </div>
-          <div class="p-5">
-            <h3 class="font-heading font-semibold text-gray-900 text-sm mb-1">{tpl.name}</h3>
-            <p class="text-gray-500 text-xs">{tpl.description}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <div class="text-center">
-      <a href="/templates" class="text-mint-600 font-medium text-sm hover:text-mint-700 transition-colors">
-        Browse templates &rarr;
-      </a>
+        ))}
+      </div>
     </div>
   </div>
 </section>
