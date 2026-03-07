@@ -246,9 +246,9 @@
       </div>
 
       <!-- Floating Block: Product Review (top-left) -->
-      <div class="absolute -top-4 -left-2 sm:-left-8 lg:-left-20 bg-white border border-gray-200 rounded-xl p-3 shadow-lg z-20 w-[220px] hero-float hero-float-1">
+      <div class="absolute -top-4 -left-2 sm:-left-10 lg:-left-28 bg-white border border-gray-200 rounded-xl p-3.5 shadow-lg z-20 w-[260px] hero-float hero-float-1">
         <div class="flex items-start gap-2.5 mb-2">
-          <div class="w-10 h-10 bg-gray-100 rounded-lg shrink-0 flex items-center justify-center">
+          <div class="w-11 h-11 bg-gray-100 rounded-lg shrink-0 flex items-center justify-center">
             <svg class="w-5 h-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
             </svg>
@@ -256,49 +256,85 @@
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-1 mb-0.5">
               {Array.from({ length: 5 }).map(() => (
-                <svg class="w-2.5 h-2.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               ))}
               <span class="text-[8px] text-gray-400 ml-0.5">01/01/2025</span>
             </div>
-            <div class="text-[10px] font-bold text-gray-900 leading-tight">ABSOLUTELY LOVE IT!</div>
+            <div class="text-[11px] font-bold text-gray-900 leading-tight">ABSOLUTELY LOVE IT!</div>
           </div>
         </div>
-        <div class="text-[9px] text-gray-500 leading-snug">The build is sturdy and it's perfect for my home workouts.</div>
-        <div class="text-[9px] text-gray-400 mt-1">— Emily R.</div>
+        <div class="text-[10px] text-gray-500 leading-snug">The build is sturdy and it's perfect for my home workouts. Great quality product.</div>
+        <div class="text-[10px] text-gray-400 mt-1.5">— Emily R.</div>
       </div>
 
-      <!-- Floating Block: Trustpilot Reviews (top-right) -->
-      <div class="absolute -top-2 -right-2 sm:-right-6 lg:-right-16 bg-white border border-gray-200 rounded-xl p-3 shadow-lg z-20 w-[200px] hero-float hero-float-2">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="text-[10px] font-semibold text-gray-900">Excellent</span>
+      <!-- Floating Block: Trustpilot Reviews (top-right) — horizontal scrollable cards -->
+      <div class="absolute -top-2 -right-2 sm:-right-8 lg:-right-24 bg-white border border-gray-200 rounded-xl p-3.5 shadow-lg z-20 w-[300px] hero-float hero-float-2 overflow-hidden">
+        <!-- Header: Excellent + stars + Trustpilot -->
+        <div class="flex items-center justify-center gap-2 mb-2.5">
+          <span class="text-xs font-bold text-gray-900">Excellent</span>
           <div class="flex gap-0.5">
             {Array.from({ length: 5 }).map(() => (
-              <div class="w-4 h-4 bg-green-500 flex items-center justify-center">
-                <svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <div class="w-[18px] h-[18px] bg-green-500 flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
               </div>
             ))}
           </div>
+          <svg class="w-[14px] h-[14px] text-green-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="text-[10px] font-semibold text-green-700">Trustpilot</span>
         </div>
-        <div class="space-y-1.5">
-          <div class="bg-gray-50 rounded-md p-2">
-            <div class="text-[9px] font-semibold text-gray-900">A Must Buy!</div>
-            <div class="text-[8px] text-gray-500 leading-snug mt-0.5">I can really see a difference...</div>
-            <div class="text-[8px] text-green-600 mt-0.5">Kayte, 12 hours ago</div>
+        <!-- Horizontal scrollable review cards -->
+        <div class="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+          <!-- Card 1 (partially visible left) -->
+          <div class="shrink-0 w-[120px] border border-gray-200 rounded-lg p-2.5">
+            <div class="flex gap-0.5 mb-1.5">
+              {Array.from({ length: 2 }).map(() => (
+                <div class="w-[14px] h-[14px] bg-green-500 flex items-center justify-center">
+                  <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+              ))}
+            </div>
+            <div class="text-[9px] font-bold text-gray-900 mb-1">Easy to stick with</div>
+            <div class="text-[8px] text-gray-500 leading-snug mb-2">Very straightforward, the texture feels stable, not messy...</div>
+            <div class="text-[8px] text-gray-400">Reviewed by Ethan W. –</div>
+            <div class="text-[8px] text-gray-400">7 hours ago</div>
           </div>
-          <div class="bg-gray-50 rounded-md p-2">
-            <div class="text-[9px] font-semibold text-gray-900">Great quality</div>
-            <div class="text-[8px] text-gray-500 leading-snug mt-0.5">Amazing service. Totally recommend.</div>
-            <div class="text-[8px] text-green-600 mt-0.5">Zane, 21 hours ago</div>
+          <!-- Card 2 (center, fully visible) -->
+          <div class="shrink-0 w-[120px] border border-gray-200 rounded-lg p-2.5">
+            <div class="flex gap-0.5 mb-1.5">
+              {Array.from({ length: 5 }).map(() => (
+                <div class="w-[14px] h-[14px] bg-green-500 flex items-center justify-center">
+                  <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+              ))}
+            </div>
+            <div class="text-[9px] font-bold text-gray-900 mb-1">Gentle, not overpowering</div>
+            <div class="text-[8px] text-gray-500 leading-snug mb-2">Some products feel too intense for me. This one feels much more balanced...</div>
+            <div class="text-[8px] text-gray-400">Reviewed by Claire M. –</div>
+            <div class="text-[8px] text-gray-400">29, 3 hours ago</div>
+          </div>
+          <!-- Card 3 (partially visible right) -->
+          <div class="shrink-0 w-[120px] border border-gray-200 rounded-lg p-2.5">
+            <div class="flex gap-0.5 mb-1.5">
+              {Array.from({ length: 4 }).map(() => (
+                <div class="w-[14px] h-[14px] bg-green-500 flex items-center justify-center">
+                  <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+              ))}
+            </div>
+            <div class="text-[9px] font-bold text-gray-900 mb-1">Works on my schedule</div>
+            <div class="text-[8px] text-gray-500 leading-snug mb-2">I'm not completely sure what I wanted but this keeps me on track...</div>
+            <div class="text-[8px] text-gray-400">Reviewed by —</div>
+            <div class="text-[8px] text-gray-400">41, 6 hours ago</div>
           </div>
         </div>
       </div>
 
       <!-- Floating Block: Gift Message (bottom-left) -->
-      <div class="absolute -bottom-6 -left-2 sm:-left-8 lg:-left-16 bg-white border border-gray-200 rounded-xl p-4 shadow-lg z-20 w-[260px] hero-float hero-float-3">
+      <div class="absolute -bottom-6 -left-2 sm:-left-10 lg:-left-24 bg-white border border-gray-200 rounded-xl p-4 shadow-lg z-20 w-[280px] hero-float hero-float-3">
         <div class="flex items-center gap-3 mb-2">
           <div class="w-9 h-9 bg-gray-100 rounded-lg flex items-center justify-center shrink-0">
             <svg class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -314,7 +350,7 @@
       </div>
 
       <!-- Floating Block: Available Coupons (mid-left) -->
-      <div class="absolute top-1/2 -translate-y-1/2 -left-4 sm:-left-12 lg:-left-24 bg-white border border-gray-200 rounded-xl p-3 shadow-lg z-20 w-[210px] hidden sm:block hero-float hero-float-5">
+      <div class="absolute top-1/2 -translate-y-1/2 -left-4 sm:-left-14 lg:-left-32 bg-white border border-gray-200 rounded-xl p-3.5 shadow-lg z-20 w-[250px] hidden sm:block hero-float hero-float-5">
         <div class="flex items-center justify-between mb-2">
           <div class="flex items-center gap-1.5">
             <svg class="w-3.5 h-3.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -344,7 +380,7 @@
       </div>
 
       <!-- Floating Block: Customer Also Loved / Upsell (bottom-right) -->
-      <div class="absolute -bottom-8 -right-2 sm:-right-6 lg:-right-14 bg-white border border-gray-200 rounded-xl p-3 shadow-lg z-20 w-[220px] hero-float hero-float-4">
+      <div class="absolute -bottom-8 -right-2 sm:-right-8 lg:-right-24 bg-white border border-gray-200 rounded-xl p-3.5 shadow-lg z-20 w-[260px] hero-float hero-float-4">
         <div class="flex items-center justify-center gap-2 mb-2">
           <div class="flex-1 h-px bg-gray-200"></div>
           <span class="text-[9px] text-gray-500 font-medium whitespace-nowrap">Customer Also Loved</span>
@@ -383,33 +419,33 @@
       </div>
 
       <!-- Floating Block: Payment Icons (mid-right) -->
-      <div class="absolute top-1/2 -translate-y-1/2 -right-4 sm:-right-10 lg:-right-20 bg-white border border-gray-200 rounded-xl p-3 shadow-lg z-20 w-[180px] hidden sm:block hero-float hero-float-6">
-        <div class="text-[10px] font-semibold text-gray-900 text-center mb-2">We Accept</div>
-        <div class="flex flex-wrap gap-1 justify-center">
-          <div class="w-9 h-6 bg-white border border-gray-200 rounded flex items-center justify-center">
-            <span class="text-[7px] font-bold text-blue-800">VISA</span>
+      <div class="absolute top-1/2 -translate-y-1/2 -right-4 sm:-right-12 lg:-right-28 bg-white border border-gray-200 rounded-xl p-3.5 shadow-lg z-20 w-[220px] hidden sm:block hero-float hero-float-6">
+        <div class="text-[11px] font-semibold text-gray-900 text-center mb-2.5">We Accept</div>
+        <div class="flex flex-wrap gap-1.5 justify-center">
+          <div class="w-11 h-7 bg-white border border-gray-200 rounded flex items-center justify-center">
+            <span class="text-[8px] font-bold text-blue-800">VISA</span>
           </div>
-          <div class="w-9 h-6 bg-white border border-gray-200 rounded flex items-center justify-center">
-            <div class="w-4 h-4 relative">
+          <div class="w-11 h-7 bg-white border border-gray-200 rounded flex items-center justify-center">
+            <div class="w-5 h-5 relative">
               <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-3 h-3 bg-red-500 rounded-full opacity-80"></div>
+                <div class="w-3.5 h-3.5 bg-red-500 rounded-full opacity-80"></div>
               </div>
-              <div class="absolute inset-0 flex items-center justify-center ml-1">
-                <div class="w-3 h-3 bg-yellow-500 rounded-full opacity-80"></div>
+              <div class="absolute inset-0 flex items-center justify-center ml-1.5">
+                <div class="w-3.5 h-3.5 bg-yellow-500 rounded-full opacity-80"></div>
               </div>
             </div>
           </div>
-          <div class="w-9 h-6 bg-blue-700 border border-gray-200 rounded flex items-center justify-center">
-            <span class="text-[6px] font-bold text-white leading-none">AM<br/>EX</span>
+          <div class="w-11 h-7 bg-blue-700 border border-gray-200 rounded flex items-center justify-center">
+            <span class="text-[7px] font-bold text-white leading-none">AM<br/>EX</span>
           </div>
-          <div class="w-9 h-6 bg-white border border-gray-200 rounded flex items-center justify-center">
-            <span class="text-[5px] font-bold text-orange-600">DISCOVER</span>
+          <div class="w-11 h-7 bg-white border border-gray-200 rounded flex items-center justify-center">
+            <span class="text-[6px] font-bold text-orange-600">DISCOVER</span>
           </div>
-          <div class="w-9 h-6 bg-white border border-gray-200 rounded flex items-center justify-center">
-            <span class="text-[7px] font-bold text-blue-600">JCB</span>
+          <div class="w-11 h-7 bg-white border border-gray-200 rounded flex items-center justify-center">
+            <span class="text-[8px] font-bold text-blue-600">JCB</span>
           </div>
-          <div class="w-9 h-6 bg-white border border-gray-200 rounded flex items-center justify-center">
-            <span class="text-[6px] font-bold text-blue-500">PayTm</span>
+          <div class="w-11 h-7 bg-white border border-gray-200 rounded flex items-center justify-center">
+            <span class="text-[7px] font-bold text-blue-500">PayTm</span>
           </div>
         </div>
       </div>
@@ -418,6 +454,8 @@
 </section>
 
 <style>
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
   @keyframes heroFloat {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
