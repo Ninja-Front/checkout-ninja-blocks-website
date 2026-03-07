@@ -78,11 +78,12 @@ const screens = [
 
     <!-- Category tabs -->
     <div class="flex justify-center mb-12">
-      <div class="inline-flex gap-2 p-1 bg-gray-100 rounded-full">
+      <div id="showcase-tabs" class="inline-flex gap-1 sm:gap-2 p-1 bg-gray-100 rounded-full flex-wrap justify-center">
         {categories.map((cat, i) => (
           <button
+            data-tab={cat}
             class:list={[
-              "px-4 py-2 text-sm font-medium rounded-full transition-all",
+              "showcase-tab px-3 sm:px-4 py-2 text-sm font-medium rounded-full transition-all cursor-pointer",
               i === 0 ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-700",
             ]}
           >
@@ -93,11 +94,12 @@ const screens = [
     </div>
 
     <!-- Screenshot gallery -->
-    <div class="flex gap-5 overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory scrollbar-hide">
+    <div id="showcase-gallery" class="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory showcase-scroll">
       {screens.map((screen) => (
         <a
           href={screen.link}
-          class="group snap-start shrink-0 w-[260px] sm:w-[280px]"
+          data-category={screen.category}
+          class="showcase-screen group snap-start shrink-0 w-[260px] sm:w-[280px] transition-all duration-300"
         >
           <!-- Phone/checkout mockup frame -->
           <div class="bg-gray-900 rounded-2xl p-4 pb-6 mb-3 hover:ring-2 hover:ring-mint-500/30 transition-all">
@@ -184,11 +186,51 @@ const screens = [
 </section>
 
 <style>
-  .scrollbar-hide::-webkit-scrollbar {
+  .showcase-scroll::-webkit-scrollbar {
     display: none;
   }
-  .scrollbar-hide {
+  .showcase-scroll {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  .showcase-screen.hidden-screen {
+    display: none;
+  }
 </style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const tabs = document.querySelectorAll('.showcase-tab');
+    const screens = document.querySelectorAll('.showcase-screen');
+    const gallery = document.getElementById('showcase-gallery');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const selected = tab.getAttribute('data-tab');
+
+        // Update tab styles
+        tabs.forEach(t => {
+          t.classList.remove('bg-white', 'text-gray-900', 'shadow-sm');
+          t.classList.add('text-gray-500');
+        });
+        tab.classList.add('bg-white', 'text-gray-900', 'shadow-sm');
+        tab.classList.remove('text-gray-500');
+
+        // Filter screens
+        screens.forEach(screen => {
+          const category = screen.getAttribute('data-category');
+          if (selected === 'All' || category === selected) {
+            screen.classList.remove('hidden-screen');
+          } else {
+            screen.classList.add('hidden-screen');
+          }
+        });
+
+        // Scroll gallery back to start
+        if (gallery) {
+          gallery.scrollTo({ left: 0, behavior: 'smooth' });
+        }
+      });
+    });
+  });
+</script>
