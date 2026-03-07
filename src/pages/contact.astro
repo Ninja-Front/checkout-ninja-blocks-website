@@ -1,0 +1,243 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const shopifyAppStoreUrl = "https://apps.shopify.com/checkout-ninja-blocks";
+
+const faqs = [
+  {
+    question: "Do I need Shopify Plus?",
+    answer: "Yes, Checkout Ninja is built exclusively for Shopify Plus stores. It uses Shopify's checkout extensibility platform, which is only available on Plus.",
+  },
+  {
+    question: "How do I install the app?",
+    answer: 'Visit our <a href="https://apps.shopify.com/checkout-ninja-blocks" target="_blank" rel="noopener noreferrer" class="text-mint-500 hover:text-mint-600 underline">Shopify App Store listing</a>, click "Add app," and follow the prompts. You\'ll be customizing your checkout in minutes.',
+  },
+  {
+    question: "Can you help me set up my checkout?",
+    answer: 'Absolutely. <a href="/demo" class="text-mint-500 hover:text-mint-600 underline">Book a demo</a> and we\'ll walk you through setup, or reach out via email and we\'ll help you get started.',
+  },
+  {
+    question: "Do you offer custom development?",
+    answer: "Yes, we work with brands that need bespoke checkout flows. Contact us with your requirements and we'll scope a solution.",
+  },
+  {
+    question: "Where can I find documentation?",
+    answer: "Our documentation covers everything from installation to advanced configurations. Reach out to us and we'll share the relevant guides for your use case.",
+  },
+];
+---
+
+<BaseLayout
+  title="Contact & Support — Checkout Ninja | Shopify Plus Checkout App"
+  description="Get help with Checkout Ninja. Email us at support@nexappstudio.com, start a live chat, or book a demo. We typically respond within a few hours."
+>
+  <Navbar />
+  <main class="pt-16">
+    <!-- Section 1: Hero -->
+    <section class="py-16 lg:py-24">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6">
+          We're Here to Help
+        </h1>
+        <p class="text-gray-500 text-lg sm:text-xl max-w-2xl mx-auto">
+          Have a question, need support, or want to see Checkout Ninja in action? We'd love to hear from you.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Contact Options -->
+    <section class="pb-16 lg:pb-24">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Email -->
+          <a href="mailto:support@nexappstudio.com" class="block bg-white rounded-2xl border border-gray-200 shadow-sm p-8 text-center hover:shadow-md hover:border-gray-300 transition-all">
+            <div class="w-12 h-12 bg-mint-500/10 rounded-xl flex items-center justify-center mx-auto mb-5">
+              <svg class="w-6 h-6 text-mint-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">Email Us</h3>
+            <p class="text-gray-500 text-sm mb-3">Get a response within a few hours during business hours.</p>
+            <span class="text-mint-500 font-medium text-sm">support@nexappstudio.com</span>
+          </a>
+
+          <!-- Live Chat -->
+          <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 text-center">
+            <div class="w-12 h-12 bg-mint-500/10 rounded-xl flex items-center justify-center mx-auto mb-5">
+              <svg class="w-6 h-6 text-mint-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">Live Chat</h3>
+            <p class="text-gray-500 text-sm mb-3">Chat with our team in real time for quick answers.</p>
+            <span class="text-gray-400 text-sm font-medium">Available during business hours</span>
+          </div>
+
+          <!-- Book a Demo -->
+          <a href="/demo" class="block bg-white rounded-2xl border border-gray-200 shadow-sm p-8 text-center hover:shadow-md hover:border-gray-300 transition-all">
+            <div class="w-12 h-12 bg-mint-500/10 rounded-xl flex items-center justify-center mx-auto mb-5">
+              <svg class="w-6 h-6 text-mint-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-semibold text-lg text-gray-900 mb-2">Book a Demo</h3>
+            <p class="text-gray-500 text-sm mb-3">See Checkout Ninja in action with a personalized walkthrough.</p>
+            <span class="text-mint-500 font-medium text-sm">Schedule a call &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Contact Form -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
+            Send Us a Message
+          </h2>
+          <p class="text-gray-500 text-base">
+            Fill out the form below and we'll get back to you as soon as possible.
+          </p>
+        </div>
+
+        <form action="#" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-1.5">Name <span class="text-red-400">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-mint-500 focus:border-transparent transition-colors"
+              placeholder="Your name"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1.5">Email <span class="text-red-400">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-mint-500 focus:border-transparent transition-colors"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div>
+            <label for="store-url" class="block text-sm font-medium text-gray-700 mb-1.5">Store URL <span class="text-gray-400 font-normal">(optional)</span></label>
+            <input
+              type="url"
+              id="store-url"
+              name="store_url"
+              class="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-mint-500 focus:border-transparent transition-colors"
+              placeholder="https://your-store.myshopify.com"
+            />
+          </div>
+
+          <div>
+            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1.5">Subject <span class="text-red-400">*</span></label>
+            <select
+              id="subject"
+              name="subject"
+              required
+              class="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-mint-500 focus:border-transparent transition-colors bg-white"
+            >
+              <option value="" disabled selected>Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="support">Technical Support</option>
+              <option value="feature">Feature Request</option>
+              <option value="partnership">Partnership</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1.5">Message <span class="text-red-400">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="5"
+              class="w-full px-4 py-3 rounded-xl border border-gray-300 text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-mint-500 focus:border-transparent transition-colors resize-none"
+              placeholder="How can we help?"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3.5 bg-mint-500 hover:bg-mint-600 text-white font-semibold rounded-full transition-colors text-sm"
+          >
+            Send Message
+          </button>
+
+          <p class="text-center text-gray-400 text-xs">
+            We typically respond within a few hours during business hours.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Section 4: FAQ -->
+    <section class="py-16 lg:py-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 lg:mb-16">
+          <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-0 divide-y divide-gray-200">
+          {faqs.map((faq) => (
+            <details class="group py-5">
+              <summary class="flex items-center justify-between cursor-pointer list-none">
+                <span class="font-heading font-semibold text-gray-900 text-base pr-8">{faq.question}</span>
+                <svg class="w-5 h-5 text-gray-400 shrink-0 transition-transform group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </summary>
+              <p class="text-gray-500 text-sm leading-relaxed mt-3 pr-12" set:html={faq.answer} />
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Bottom CTA -->
+    <section class="py-16 lg:py-24 relative overflow-hidden">
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div class="w-[800px] h-[400px] bg-mint-500/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-gray-900 mb-6">
+          Ready to Get Started?
+        </h2>
+        <p class="text-gray-500 text-lg sm:text-xl mb-10 max-w-2xl mx-auto">
+          Install Checkout Ninja and start customizing your Shopify Plus checkout today.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={shopifyAppStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-10 py-4 bg-mint-500 hover:bg-mint-600 text-white font-bold rounded-full transition-colors text-base"
+          >
+            Install on Shopify
+            <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a href="/pricing" class="inline-flex items-center justify-center px-10 py-4 border border-gray-300 hover:border-gray-400 text-gray-700 font-medium rounded-full transition-colors text-base">
+            See Pricing
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
