@@ -162,32 +162,39 @@ const sections = {
   </div>
 </section>
 
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const tabs = document.querySelectorAll('.value-tab');
-    const panels = document.querySelectorAll('.value-panel');
+<script is:inline>
+  (function() {
+    function initTabs() {
+      var tabs = document.querySelectorAll('.value-tab');
+      var panels = document.querySelectorAll('.value-panel');
+      if (!tabs.length) return;
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const selected = tab.getAttribute('data-tab');
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var selected = tab.getAttribute('data-tab');
 
-        // Update tab styles
-        tabs.forEach(t => {
-          t.classList.remove('bg-white', 'text-gray-900', 'shadow-sm');
-          t.classList.add('text-gray-500');
-        });
-        tab.classList.add('bg-white', 'text-gray-900', 'shadow-sm');
-        tab.classList.remove('text-gray-500');
+          tabs.forEach(function(t) {
+            t.classList.remove('bg-white', 'text-gray-900', 'shadow-sm');
+            t.classList.add('text-gray-500');
+          });
+          tab.classList.add('bg-white', 'text-gray-900', 'shadow-sm');
+          tab.classList.remove('text-gray-500');
 
-        // Show/hide panels
-        panels.forEach(panel => {
-          if (panel.getAttribute('data-panel') === selected) {
-            panel.classList.remove('hidden');
-          } else {
-            panel.classList.add('hidden');
-          }
+          panels.forEach(function(panel) {
+            if (panel.getAttribute('data-panel') === selected) {
+              panel.classList.remove('hidden');
+            } else {
+              panel.classList.add('hidden');
+            }
+          });
         });
       });
-    });
-  });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTabs);
+    } else {
+      initTabs();
+    }
+  })();
 </script>
