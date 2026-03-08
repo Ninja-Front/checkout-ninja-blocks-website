@@ -1,0 +1,472 @@
+---
+
+---
+
+<section class="relative pt-28 pb-8 lg:pt-36 lg:pb-16 overflow-hidden">
+  <!-- Background glow -->
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-mint-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Centered Copy -->
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-3 px-5 py-2 bg-white border border-gray-200 rounded-full shadow-sm mb-8">
+        <svg class="w-5 h-5 text-mint-500" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+        <span class="text-sm font-medium text-gray-700">Built for Shopify Plus</span>
+      </div>
+
+      <h1 class="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6 text-gray-900">
+        Build a Better<br />
+        <span class="text-mint-500">Checkout</span>
+      </h1>
+
+      <p class="text-gray-500 text-lg sm:text-xl leading-relaxed mb-8 max-w-xl mx-auto">
+        Shopify Plus gives you a checkout. Checkout Ninja lets you make it yours — with trust badges, custom fields, upsells, validation rules, templates, and 20+ more block types. No code required.
+      </p>
+
+      <div class="flex items-center justify-center gap-2 mb-8">
+        <div class="flex gap-0.5">
+          {Array.from({ length: 5 }).map(() => (
+            <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          ))}
+        </div>
+        <span class="text-sm font-medium text-gray-600">5.0 on the Shopify App Store</span>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://apps.shopify.com/checkout-ninja" class="inline-flex items-center justify-center px-8 py-3.5 bg-mint-500 hover:bg-mint-600 text-white font-semibold rounded-full transition-colors text-base">
+          Install on Shopify
+          <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+        <a href="/contact" class="inline-flex items-center justify-center px-8 py-3.5 border border-gray-300 hover:border-gray-400 text-gray-700 font-medium rounded-full transition-colors text-base">
+          Book a Demo
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating Checkout Composition -->
+    <div class="relative max-w-5xl mx-auto">
+      <!-- Central Checkout Screen — Realistic Shopify-style -->
+      <div class="relative mx-auto max-w-sm sm:max-w-xl md:max-w-2xl bg-white border border-gray-200 rounded-2xl shadow-2xl z-10 overflow-hidden">
+        <!-- Checkout Page Content -->
+        <div class="p-4 sm:p-5">
+          <!-- Store Header -->
+          <div class="flex items-center gap-2 mb-4 pb-3 border-b border-gray-100">
+            <div class="w-7 h-7 bg-mint-500 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-[10px]">CN</span>
+            </div>
+            <span class="font-heading font-semibold text-gray-900 text-xs">Checkout Ninja Store</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-5">
+            <!-- Left Column: Form (3/5) -->
+            <div class="md:col-span-3 space-y-4">
+              <!-- Express Checkout -->
+              <div class="text-center">
+                <div class="text-[10px] text-gray-400 mb-1.5">Express checkout</div>
+                <div class="flex gap-2 justify-center">
+                  <div class="h-8 w-[72px] bg-indigo-600 rounded-md flex items-center justify-center">
+                    <span class="text-white text-[9px] font-bold tracking-wide">Shop Pay</span>
+                  </div>
+                  <div class="h-8 w-[72px] bg-gray-900 rounded-md flex items-center justify-center">
+                    <span class="text-white text-[9px] font-bold">G Pay</span>
+                  </div>
+                  <div class="h-8 w-[72px] bg-yellow-400 rounded-md flex items-center justify-center">
+                    <span class="text-blue-800 text-[9px] font-bold italic">PayPal</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 my-2">
+                  <div class="flex-1 h-px bg-gray-200"></div>
+                  <span class="text-[9px] text-gray-400">OR</span>
+                  <div class="flex-1 h-px bg-gray-200"></div>
+                </div>
+              </div>
+
+              <!-- Contact -->
+              <div>
+                <div class="text-[11px] font-semibold text-gray-900 mb-1.5">Contact</div>
+                <div class="h-7 border border-gray-200 rounded-md px-2.5 flex items-center">
+                  <span class="text-[10px] text-gray-400">Email or phone number</span>
+                </div>
+              </div>
+
+              <!-- Delivery -->
+              <div>
+                <div class="text-[11px] font-semibold text-gray-900 mb-1.5">Delivery</div>
+                <div class="space-y-1.5">
+                  <div class="h-7 border border-gray-200 rounded-md px-2.5 flex items-center justify-between">
+                    <span class="text-[10px] text-gray-700">United States</span>
+                    <svg class="w-3 h-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                  </div>
+                  <div class="grid grid-cols-2 gap-1.5">
+                    <div class="h-7 border border-gray-200 rounded-md px-2.5 flex items-center">
+                      <span class="text-[10px] text-gray-400">First name</span>
+                    </div>
+                    <div class="h-7 border border-gray-200 rounded-md px-2.5 flex items-center">
+                      <span class="text-[10px] text-gray-400">Last name</span>
+                    </div>
+                  </div>
+                  <div class="h-7 border border-gray-200 rounded-md px-2.5 flex items-center">
+                    <span class="text-[10px] text-gray-400">Address</span>
+                  </div>
+                  <div class="grid grid-cols-3 gap-1.5">
+                    <div class="h-7 border border-gray-200 rounded-md px-2.5 flex items-center">
+                      <span class="text-[10px] text-gray-400">City</span>
+                    </div>
+                    <div class="h-7 border border-gray-200 rounded-md px-2.5 flex items-center justify-between">
+                      <span class="text-[10px] text-gray-400">State</span>
+                      <svg class="w-3 h-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
+                    <div class="h-7 border border-gray-200 rounded-md px-2.5 flex items-center">
+                      <span class="text-[10px] text-gray-400">ZIP</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Payment -->
+              <div>
+                <div class="text-[11px] font-semibold text-gray-900 mb-1">Payment</div>
+                <div class="text-[9px] text-gray-400 mb-1.5">All transactions are secure and encrypted</div>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                  <div class="flex items-center justify-between px-2.5 py-2 bg-gray-50 border-b border-gray-200">
+                    <div class="flex items-center gap-1.5">
+                      <div class="w-3 h-3 rounded-full border-2 border-mint-500 flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-mint-500"></div>
+                      </div>
+                      <span class="text-[10px] font-medium text-gray-900">Credit or debit card</span>
+                    </div>
+                    <div class="flex gap-0.5">
+                      <div class="w-6 h-4 bg-blue-700 rounded-sm flex items-center justify-center"><span class="text-white text-[6px] font-bold">VISA</span></div>
+                      <div class="w-6 h-4 bg-red-500 rounded-sm flex items-center justify-center"><span class="text-white text-[6px] font-bold">MC</span></div>
+                      <div class="w-6 h-4 bg-blue-500 rounded-sm flex items-center justify-center"><span class="text-white text-[6px] font-bold">AMEX</span></div>
+                    </div>
+                  </div>
+                  <div class="p-2.5 space-y-1.5">
+                    <div class="h-7 border border-gray-200 rounded-md px-2.5 flex items-center">
+                      <span class="text-[10px] text-gray-400">Card number</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-1.5">
+                      <div class="h-7 border border-gray-200 rounded-md px-2.5 flex items-center">
+                        <span class="text-[10px] text-gray-400">Expiration (MM/YY)</span>
+                      </div>
+                      <div class="h-7 border border-gray-200 rounded-md px-2.5 flex items-center">
+                        <span class="text-[10px] text-gray-400">Security code</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pay Now Button -->
+              <button class="w-full bg-mint-500 text-white font-bold py-3 rounded-lg text-xs cursor-default">
+                Pay now
+              </button>
+
+              <div class="flex gap-4 justify-center pt-1">
+                <span class="text-[10px] text-gray-400 underline">Return policy</span>
+                <span class="text-[10px] text-gray-400 underline">Privacy policy</span>
+                <span class="text-[10px] text-gray-400 underline">Terms of service</span>
+              </div>
+            </div>
+
+            <!-- Right Column: Order Summary (2/5) -->
+            <div class="md:col-span-2 md:border-l md:border-gray-100 md:pl-4 hidden md:block">
+              <div class="space-y-2">
+                <!-- Product 1 -->
+                <div class="flex items-center gap-2">
+                  <div class="relative w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center shrink-0 border border-gray-200">
+                    <svg class="w-4 h-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                    <span class="absolute -top-1 -right-1 w-4 h-4 bg-gray-500 text-white text-[8px] font-bold rounded-full flex items-center justify-center">1</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="text-[10px] font-medium text-gray-900">Monstera Plant</div>
+                    <div class="text-[8px] text-gray-400">Concrete pot</div>
+                  </div>
+                  <span class="text-[10px] font-medium text-gray-900">$59.00</span>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="flex items-center gap-2">
+                  <div class="relative w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center shrink-0 border border-gray-200">
+                    <svg class="w-4 h-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                    </svg>
+                    <span class="absolute -top-1 -right-1 w-4 h-4 bg-gray-500 text-white text-[8px] font-bold rounded-full flex items-center justify-center">1</span>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="text-[10px] font-medium text-gray-900">Watering Can</div>
+                    <div class="text-[8px] text-gray-400">Matte black</div>
+                  </div>
+                  <span class="text-[10px] font-medium text-gray-900">$39.00</span>
+                </div>
+
+                <!-- Discount code -->
+                <div class="flex gap-1.5 pt-1">
+                  <div class="flex-1 h-6 border border-gray-200 rounded-md px-2 flex items-center">
+                    <span class="text-[9px] text-gray-400">Discount code</span>
+                  </div>
+                  <button class="px-2.5 h-6 bg-gray-100 text-gray-500 text-[9px] font-medium rounded-md cursor-default border border-gray-200">
+                    Apply
+                  </button>
+                </div>
+
+                <!-- Totals -->
+                <div class="pt-2 border-t border-gray-100 space-y-1">
+                  <div class="flex justify-between">
+                    <span class="text-[9px] text-gray-500">Subtotal</span>
+                    <span class="text-[9px] text-gray-700 font-medium">$157.00</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[9px] text-gray-500">Shipping</span>
+                    <span class="text-[9px] text-gray-400 italic">Enter address</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[9px] text-gray-500">Estimated taxes</span>
+                    <span class="text-[9px] text-gray-700 font-medium">$5.00</span>
+                  </div>
+                </div>
+
+                <div class="flex justify-between items-baseline pt-2 border-t border-gray-100">
+                  <span class="text-xs font-semibold text-gray-900">Total</span>
+                  <span class="text-sm font-bold text-gray-900">$162.00</span>
+                </div>
+                <div class="text-[8px] text-gray-400">Including $5.00 in taxes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Block: Product Review (top-left) -->
+      <div class="absolute -top-4 -left-2 sm:-left-10 lg:-left-28 bg-white border border-gray-200 rounded-xl p-3.5 shadow-lg z-20 w-[260px] hero-float hero-float-1">
+        <div class="flex items-start gap-2.5 mb-2">
+          <div class="w-11 h-11 bg-gray-100 rounded-lg shrink-0 flex items-center justify-center">
+            <svg class="w-5 h-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-1 mb-0.5">
+              {Array.from({ length: 5 }).map(() => (
+                <svg class="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+              <span class="text-[8px] text-gray-400 ml-0.5">01/01/2025</span>
+            </div>
+            <div class="text-[11px] font-bold text-gray-900 leading-tight">ABSOLUTELY LOVE IT!</div>
+          </div>
+        </div>
+        <div class="text-[10px] text-gray-500 leading-snug">The build is sturdy and it's perfect for my home workouts. Great quality product.</div>
+        <div class="text-[10px] text-gray-400 mt-1.5">— Emily R.</div>
+      </div>
+
+      <!-- Floating Block: Trustpilot Reviews (top-right) — horizontal scrollable cards -->
+      <div class="absolute -top-2 -right-2 sm:-right-8 lg:-right-24 bg-white border border-gray-200 rounded-xl p-3.5 shadow-lg z-20 w-[300px] hero-float hero-float-2 overflow-hidden">
+        <!-- Header: Excellent + stars + Trustpilot -->
+        <div class="flex items-center justify-center gap-2 mb-2.5">
+          <span class="text-xs font-bold text-gray-900">Excellent</span>
+          <div class="flex gap-0.5">
+            {Array.from({ length: 5 }).map(() => (
+              <div class="w-[18px] h-[18px] bg-green-500 flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              </div>
+            ))}
+          </div>
+          <svg class="w-[14px] h-[14px] text-green-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <span class="text-[10px] font-semibold text-green-700">Trustpilot</span>
+        </div>
+        <!-- Horizontal scrollable review cards -->
+        <div class="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
+          <!-- Card 1 (partially visible left) -->
+          <div class="shrink-0 w-[120px] border border-gray-200 rounded-lg p-2.5">
+            <div class="flex gap-0.5 mb-1.5">
+              {Array.from({ length: 2 }).map(() => (
+                <div class="w-[14px] h-[14px] bg-green-500 flex items-center justify-center">
+                  <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+              ))}
+            </div>
+            <div class="text-[9px] font-bold text-gray-900 mb-1">Easy to stick with</div>
+            <div class="text-[8px] text-gray-500 leading-snug mb-2">Very straightforward, the texture feels stable, not messy...</div>
+            <div class="text-[8px] text-gray-400">Reviewed by Ethan W. –</div>
+            <div class="text-[8px] text-gray-400">7 hours ago</div>
+          </div>
+          <!-- Card 2 (center, fully visible) -->
+          <div class="shrink-0 w-[120px] border border-gray-200 rounded-lg p-2.5">
+            <div class="flex gap-0.5 mb-1.5">
+              {Array.from({ length: 5 }).map(() => (
+                <div class="w-[14px] h-[14px] bg-green-500 flex items-center justify-center">
+                  <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+              ))}
+            </div>
+            <div class="text-[9px] font-bold text-gray-900 mb-1">Gentle, not overpowering</div>
+            <div class="text-[8px] text-gray-500 leading-snug mb-2">Some products feel too intense for me. This one feels much more balanced...</div>
+            <div class="text-[8px] text-gray-400">Reviewed by Claire M. –</div>
+            <div class="text-[8px] text-gray-400">29, 3 hours ago</div>
+          </div>
+          <!-- Card 3 (partially visible right) -->
+          <div class="shrink-0 w-[120px] border border-gray-200 rounded-lg p-2.5">
+            <div class="flex gap-0.5 mb-1.5">
+              {Array.from({ length: 4 }).map(() => (
+                <div class="w-[14px] h-[14px] bg-green-500 flex items-center justify-center">
+                  <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                </div>
+              ))}
+            </div>
+            <div class="text-[9px] font-bold text-gray-900 mb-1">Works on my schedule</div>
+            <div class="text-[8px] text-gray-500 leading-snug mb-2">I'm not completely sure what I wanted but this keeps me on track...</div>
+            <div class="text-[8px] text-gray-400">Reviewed by —</div>
+            <div class="text-[8px] text-gray-400">41, 6 hours ago</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Block: Gift Message (bottom-left) -->
+      <div class="absolute -bottom-6 -left-2 sm:-left-10 lg:-left-24 bg-white border border-gray-200 rounded-xl p-4 shadow-lg z-20 w-[280px] hero-float hero-float-3">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-9 h-9 bg-gray-100 rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+            </svg>
+          </div>
+          <div>
+            <div class="text-xs font-semibold text-gray-900">Gift Message</div>
+            <div class="text-[10px] text-gray-400 leading-tight">You make it personal. We'll send it with your order.</div>
+          </div>
+        </div>
+        <span class="text-[11px] text-blue-500 font-medium">Add a gift message</span>
+      </div>
+
+      <!-- Floating Block: Available Coupons (mid-left) -->
+      <div class="absolute top-1/2 -translate-y-1/2 -left-4 sm:-left-14 lg:-left-32 bg-white border border-gray-200 rounded-xl p-3.5 shadow-lg z-20 w-[250px] hidden sm:block hero-float hero-float-5">
+        <div class="flex items-center justify-between mb-2">
+          <div class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" />
+            </svg>
+            <span class="text-[11px] font-semibold text-gray-900">Available Coupons</span>
+          </div>
+          <svg class="w-3 h-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="space-y-1.5">
+          <div class="bg-gray-50 rounded-md px-2.5 py-2 flex items-center justify-between">
+            <div>
+              <div class="text-[10px] font-bold text-gray-900">WELCOME10</div>
+              <div class="text-[8px] text-gray-500">10% OFF on your first order</div>
+            </div>
+            <span class="text-[9px] text-gray-500 font-medium underline">APPLY</span>
+          </div>
+          <div class="bg-gray-50 rounded-md px-2.5 py-2 flex items-center justify-between">
+            <div>
+              <div class="text-[10px] font-bold text-gray-900">200OFF</div>
+              <div class="text-[8px] text-gray-500">$200 off orders above $300</div>
+            </div>
+            <span class="text-[9px] text-gray-500 font-medium underline">APPLY</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Block: Customer Also Loved / Upsell (bottom-right) -->
+      <div class="absolute -bottom-8 -right-2 sm:-right-8 lg:-right-24 bg-white border border-gray-200 rounded-xl p-3.5 shadow-lg z-20 w-[260px] hero-float hero-float-4">
+        <div class="flex items-center justify-center gap-2 mb-2">
+          <div class="flex-1 h-px bg-gray-200"></div>
+          <span class="text-[9px] text-gray-500 font-medium whitespace-nowrap">Customer Also Loved</span>
+          <div class="flex-1 h-px bg-gray-200"></div>
+        </div>
+        <div class="space-y-1.5">
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-2">
+            <div class="w-8 h-8 bg-gray-100 rounded-md flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-[9px] font-medium text-gray-900">Dressing Bottle</div>
+              <div class="text-[9px] font-bold text-gray-900">$13.80</div>
+            </div>
+            <div class="px-2 py-1 bg-gray-900 rounded-md">
+              <span class="text-[8px] text-white font-semibold">Add To Cart</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-2">
+            <div class="w-8 h-8 bg-gray-100 rounded-md flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-[9px] font-medium text-gray-900">Gold Brew Carafe</div>
+              <div class="text-[9px] font-bold text-gray-900">$44.00</div>
+            </div>
+            <div class="px-2 py-1 bg-gray-900 rounded-md">
+              <span class="text-[8px] text-white font-semibold">Add To Cart</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Block: Payment Icons (mid-right) -->
+      <div class="absolute top-1/2 -translate-y-1/2 -right-4 sm:-right-12 lg:-right-28 bg-white border border-gray-200 rounded-xl p-3.5 shadow-lg z-20 w-[220px] hidden sm:block hero-float hero-float-6">
+        <div class="text-[11px] font-semibold text-gray-900 text-center mb-2.5">We Accept</div>
+        <div class="flex flex-wrap gap-1.5 justify-center">
+          <div class="w-11 h-7 bg-white border border-gray-200 rounded flex items-center justify-center">
+            <span class="text-[8px] font-bold text-blue-800">VISA</span>
+          </div>
+          <div class="w-11 h-7 bg-white border border-gray-200 rounded flex items-center justify-center">
+            <div class="w-5 h-5 relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-3.5 h-3.5 bg-red-500 rounded-full opacity-80"></div>
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center ml-1.5">
+                <div class="w-3.5 h-3.5 bg-yellow-500 rounded-full opacity-80"></div>
+              </div>
+            </div>
+          </div>
+          <div class="w-11 h-7 bg-blue-700 border border-gray-200 rounded flex items-center justify-center">
+            <span class="text-[7px] font-bold text-white leading-none">AM<br/>EX</span>
+          </div>
+          <div class="w-11 h-7 bg-white border border-gray-200 rounded flex items-center justify-center">
+            <span class="text-[6px] font-bold text-orange-600">DISCOVER</span>
+          </div>
+          <div class="w-11 h-7 bg-white border border-gray-200 rounded flex items-center justify-center">
+            <span class="text-[8px] font-bold text-blue-600">JCB</span>
+          </div>
+          <div class="w-11 h-7 bg-white border border-gray-200 rounded flex items-center justify-center">
+            <span class="text-[7px] font-bold text-blue-500">PayTm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  @keyframes heroFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .hero-float {
+    animation: heroFloat 4s ease-in-out infinite;
+  }
+  .hero-float-1 { animation-delay: 0s; }
+  .hero-float-2 { animation-delay: 0.8s; }
+  .hero-float-3 { animation-delay: 1.6s; }
+  .hero-float-4 { animation-delay: 2.4s; }
+  .hero-float-5 { animation-delay: 0.4s; }
+  .hero-float-6 { animation-delay: 1.2s; }
+</style>

@@ -1,0 +1,200 @@
+---
+const tabs = [
+  { id: "conversions", label: "Boost Conversions" },
+  { id: "trust", label: "Build Trust" },
+  { id: "customize", label: "Customize Checkout" },
+];
+
+const sections = {
+  conversions: {
+    features: [
+      {
+        title: "Upsell products at checkout",
+        description: "Show product recommendations and bundle offers right when customers are ready to buy. Merchants see higher AOV without extra effort.",
+        link: "/features/conversion-boosters",
+        size: "large",
+      },
+      {
+        title: "Coupon display",
+        description: "Show applied discounts and promo codes so customers feel the value of their purchase.",
+        link: "/features/conversion-boosters",
+        size: "small",
+      },
+      {
+        title: "Shipping protection",
+        description: "Offer shipping protection at checkout — one click for peace of mind and extra revenue.",
+        link: "/features/conversion-boosters",
+        size: "small",
+      },
+    ],
+  },
+  trust: {
+    features: [
+      {
+        title: "Trust badges and security seals",
+        description: "Display SSL badges, payment icons, and money-back guarantees. Customers feel safe entering payment details when they see familiar trust signals.",
+        link: "/features/trust-security",
+        size: "small",
+      },
+      {
+        title: "Payment method icons",
+        description: "Show Visa, Mastercard, Amex, PayPal — let customers know their preferred payment is supported.",
+        link: "/features/trust-security",
+        size: "small",
+      },
+      {
+        title: "Customer reviews at checkout",
+        description: "Surface star ratings and recent reviews right at the point of purchase. Social proof when it matters most — proven to reduce cart abandonment.",
+        link: "/features/trust-security",
+        size: "large",
+      },
+    ],
+  },
+  customize: {
+    features: [
+      {
+        title: "Custom fields and forms",
+        description: "Add gift messages, delivery date pickers, dropdowns, and any custom data field. Collect exactly what you need from customers during checkout.",
+        link: "/features/custom-fields",
+        size: "large",
+      },
+      {
+        title: "Branded banners and content",
+        description: "Match your checkout to your brand with custom headings, banners, and dividers.",
+        link: "/features/layout-content",
+        size: "small",
+      },
+      {
+        title: "Conditional visibility rules",
+        description: "Show different blocks based on cart value, product type, or customer tags. Smart targeting, no code.",
+        link: "/features/conditional-visibility",
+        size: "small",
+      },
+    ],
+  },
+};
+---
+
+<section class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-gray-900 text-center mb-4">
+      Here's how merchants get value from Checkout Ninja
+    </h2>
+    <p class="text-gray-500 text-center text-lg mb-10 max-w-2xl mx-auto">
+      Real checkout customizations that drive results
+    </p>
+
+    <!-- Tabs -->
+    <div class="flex justify-center mb-12">
+      <div id="value-tabs" class="inline-flex gap-1 p-1 bg-gray-100 rounded-full">
+        {tabs.map((tab, i) => (
+          <button
+            data-tab={tab.id}
+            class:list={[
+              "value-tab px-5 py-2.5 text-sm font-medium rounded-full transition-all cursor-pointer",
+              i === 0 ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-700",
+            ]}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Panels -->
+    {Object.entries(sections).map(([id, section], idx) => (
+      <div
+        data-panel={id}
+        class:list={["value-panel", idx !== 0 && "hidden"]}
+      >
+        <div class="grid md:grid-cols-2 gap-5">
+          {section.features.map((feature, fi) => (
+            <a
+              href={feature.link}
+              class:list={[
+                "group block rounded-2xl overflow-hidden border border-gray-200 bg-white hover:border-mint-500/30 hover:shadow-lg transition-all",
+                feature.size === "large" && "md:col-span-2",
+              ]}
+            >
+              <div class:list={[
+                "flex flex-col",
+                feature.size === "large" ? "md:flex-row" : "",
+              ]}>
+                <!-- Image area -->
+                <div class:list={[
+                  "bg-gray-50 flex items-center justify-center relative overflow-hidden",
+                  feature.size === "large" ? "md:w-1/2 min-h-[240px]" : "min-h-[200px]",
+                ]}>
+                  <div class="text-center px-8">
+                    <div class="w-16 h-16 bg-gray-100 rounded-2xl mx-auto mb-3 flex items-center justify-center">
+                      <svg class="w-8 h-8 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+                      </svg>
+                    </div>
+                    <span class="text-xs text-gray-300">Product screenshot</span>
+                  </div>
+                </div>
+
+                <!-- Text content -->
+                <div class:list={[
+                  "p-6 lg:p-8 flex flex-col justify-center",
+                  feature.size === "large" ? "md:w-1/2" : "",
+                ]}>
+                  <h3 class="font-heading font-semibold text-gray-900 text-lg mb-2 group-hover:text-mint-600 transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                    {feature.description}
+                  </p>
+                  <span class="text-mint-600 text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Learn more
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script is:inline>
+  (function() {
+    function initTabs() {
+      var tabs = document.querySelectorAll('.value-tab');
+      var panels = document.querySelectorAll('.value-panel');
+      if (!tabs.length) return;
+
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var selected = tab.getAttribute('data-tab');
+
+          tabs.forEach(function(t) {
+            t.classList.remove('bg-white', 'text-gray-900', 'shadow-sm');
+            t.classList.add('text-gray-500');
+          });
+          tab.classList.add('bg-white', 'text-gray-900', 'shadow-sm');
+          tab.classList.remove('text-gray-500');
+
+          panels.forEach(function(panel) {
+            if (panel.getAttribute('data-panel') === selected) {
+              panel.classList.remove('hidden');
+            } else {
+              panel.classList.add('hidden');
+            }
+          });
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTabs);
+    } else {
+      initTabs();
+    }
+  })();
+</script>
